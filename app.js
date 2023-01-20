@@ -13,7 +13,7 @@ app.use(morgan("dev"));
 app.use(express.json()); //Enables req reading
 
 app.use(express.static(path.join(__dirname, "public")));
-app.use('/',express.static('../../withusbuild'))
+app.use('/',express.static('../withus-build'))
 app.use("/withus/api/v1/landing", landingRouter)
 
 module.exports = app;
