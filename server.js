@@ -19,7 +19,7 @@ app.use(
     origin: "*",
     optionsSuccessStatus: 200,
     credentials:true, 
-    methods: "OPTIONS,GET,PUT,DELETE,POST,PATCH",
+    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
   })
 );
 
