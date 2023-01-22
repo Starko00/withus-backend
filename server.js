@@ -18,7 +18,8 @@ app.use(
   cors({
     origin: "*",
     optionsSuccessStatus: 200,
-    methods: "GET,PUT,DELETE,POST,PATCH",
+    credentials:true, 
+    methods: "OPTIONS,GET,PUT,DELETE,POST,PATCH",
   })
 );
 
