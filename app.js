@@ -5,6 +5,7 @@ const app = express();
 const history = require("connect-history-api-fallback");
 const landingRouter = require("./routes/landingRouter");
 const blogRouter = require("./routes/blogRouter")
+const contactRouter = require('./routes/contactRouter')
 //  Req time loging 
 app.use((req, res, next) => {
   req.requestTime = new Date().toString();
@@ -50,6 +51,6 @@ app.use("/", express.static("../withus-build"));
 //Routes - Router
 app.use("/api/withus/v1/", landingRouter);
 app.use("/api/withus/v1/blog/", blogRouter);
-
+app.use("/api/withus/v1/contact", contactRouter )
 
 module.exports = app;
