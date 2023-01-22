@@ -17,9 +17,9 @@ mongoose.connect(DB).then(() => {
 app.use(
   cors({
     origin: "*",
-    optionsSuccessStatus: 200,
-    credentials:true, 
-    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
+
+    credentials: true,
+    methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
   })
 );
 

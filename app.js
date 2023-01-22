@@ -5,6 +5,7 @@ const app = express();
 const history = require("connect-history-api-fallback");
 const landingRouter = require("./routes/landingRouter");
 const blogRouter = require("./routes/blogRouter")
+const cors = require('cors')
 const contactRouter = require('./routes/contactRouter')
 //  Req time loging 
 app.use((req, res, next) => {
@@ -13,7 +14,14 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(
+  cors({
+    origin: "*",
 
+    credentials: true,
+    methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
+  })
+);
 // Rendering and access:
 app.use(
   history({
