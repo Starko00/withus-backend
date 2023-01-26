@@ -36,7 +36,9 @@ app.use(
             context.parsedUrl.pathname.indexOf("/static") == 0 ||
             context.parsedUrl.pathname.indexOf("/api") == 0 ||
             context.parsedUrl.pathname.indexOf("/manifest.json") == 0 ||
-            context.parsedUrl.pathname.indexOf("/robots.txt") == 0
+            context.parsedUrl.pathname.indexOf("/robots.txt") == 0 ||
+            context.parsedUrl.pathname.indexOf("/public") == 0 ||
+            context.parsedUrl.pathname.indexOf("/blogImgs") == 0 
           ) {
             return context.parsedUrl.pathname;
           } else return "/index.html";
@@ -50,12 +52,12 @@ app.use(
 app.use(morgan("dev"));
 app.use(express.json()); //Enables req reading
 
-//Public access
-app.use(express.static(path.join(__dirname, "public")));
+
 
 //Server static serving current = react-build (app)
 app.use("/", express.static("../withus-build"));
-
+//Public access
+app.use("/static",express.static(path.join(__dirname, "public")));
 //Routes - Router
 app.use("/api/withus/v1/", landingRouter);
 app.use("/api/withus/v1/blog/", blogRouter);
