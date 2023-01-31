@@ -64,6 +64,22 @@ exports.deleteBlog = async (req, res, next) => {
     });
   }
 };
+exports.getOneBlog = async(req,res,next)=>{
+  try {
+    const tittleTofind = req.body.tittle.replaceAll('-'," ")
+  const blog = await Blog.find({tittle:tittleTofind})
+  res.status(200).json({
+    blog
+  })
+  } catch (error) {
+    res.status(201).json({
+      error
+    })
+  }
+  
+}
+
+
 
 //Add pictures
 const blogImgStorage = multer.diskStorage({

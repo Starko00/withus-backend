@@ -14,14 +14,7 @@ mongoose.connect(DB).then(() => {
   console.log("DB connected");
 });
 
-app.use(
-  cors({
-    origin: "*",
 
-    credentials: true,
-    methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
-  })
-);
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
