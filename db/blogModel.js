@@ -23,7 +23,9 @@ const blogSchema = new mongoose.Schema({
     img:{
         type:String,
     },
-   
+   miniText:{
+    type:String
+   }
     
 
 })
